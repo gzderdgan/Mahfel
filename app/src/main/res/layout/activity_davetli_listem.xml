@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/misafirEkle"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/txtItem"
+        android:background="@android:color/holo_green_light"
+        android:text="Misafir Ekleyiniz" />
+
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtItem"
+
+        android:gravity="center_horizontal"
+        />
+
+    <ListView
+        android:id="@+id/listee"
+        android:layout_width="500dp"
+        android:layout_height="485dp"
+        android:layout_above="@+id/btnDel"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorAccent"
+        android:choiceMode="multipleChoice"></ListView>
+
+    <Button
+        android:id="@+id/btnDel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_red_light"
+        android:text="Lütfen Silmek İstediğiniz Misafirin Üzerine Basılı Tutunuz"
+        android:textStyle="normal|bold" />
+</RelativeLayout>

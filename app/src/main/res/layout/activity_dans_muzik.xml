@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#FF330000"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/shapeOf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:text="Sting - Shape Of My Heart" />
+
+    <Button
+        android:id="@+id/walking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="Kadabostany - walking with a ghost" />
+
+    <Button
+        android:id="@+id/deniz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_blue_bright"
+        android:text="Can Atilla. - denizlerin efendisi" />
+
+    <Button
+        android:id="@+id/thrones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_green_light"
+        android:text="Game of Thores" />
+
+    <Button
+        android:id="@+id/therion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_purple"
+        android:text="Therion - Vovin" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/dans" />
+
+
+</LinearLayout>

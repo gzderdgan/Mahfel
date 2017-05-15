@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorControlActivated"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp">
+
+
+    <ImageButton
+        android:id="@+id/bceyiz"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="31dp"
+        app:srcCompat="@drawable/ceyizlistem" />
+
+    <ImageButton
+        android:id="@+id/bdavetli"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/bceyiz"
+        android:layout_marginEnd="51dp"
+        app:srcCompat="@drawable/davetliler" />
+
+    <ImageButton
+        android:id="@+id/bdans"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/textView9"
+        android:layout_below="@+id/textView9"
+        app:srcCompat="@drawable/muzikler" />
+
+    <ImageButton
+        android:id="@+id/bsalon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/textView11"
+        android:layout_marginTop="37dp"
+        android:layout_toEndOf="@+id/bdans"
+        app:srcCompat="@drawable/restaurant" />
+
+    <ImageButton
+        android:id="@+id/bnot"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignEnd="@+id/bdavetli"
+        android:layout_below="@+id/textView10"
+        app:srcCompat="@drawable/notes" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView10"
+        android:layout_alignBottom="@+id/textView10"
+        android:layout_alignStart="@+id/bceyiz"
+        android:text="Çeyiz Listem"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/bdavetli"
+        android:layout_below="@+id/bdavetli"
+        android:layout_marginTop="14dp"
+        android:text="Davetli Listem"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/bdans"
+        android:layout_below="@+id/bdans"
+        android:layout_marginTop="24dp"
+        android:layout_toStartOf="@+id/bnot"
+        android:text="Önerilen Dans Müzikleri"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView13"
+        android:layout_below="@+id/bsalon"
+        android:layout_marginTop="19dp"
+        android:text="Düğün Salonu İletişim"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/textView11"
+        android:layout_alignEnd="@+id/bnot"
+        android:layout_alignTop="@+id/textView11"
+        android:layout_toEndOf="@+id/textView11"
+        android:text="Notlar"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</RelativeLayout>

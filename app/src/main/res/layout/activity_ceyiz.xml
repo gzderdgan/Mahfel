@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/txtItem"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:background="@android:color/darker_gray"
+        android:hint="Çeyizi Buraya Yazınız"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/txtItem"
+        android:background="@android:color/holo_green_light"
+        android:text="Ekle" />
+
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtItem"
+
+        android:gravity="center_horizontal"
+        />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="500dp"
+        android:layout_height="480dp"
+        android:layout_below="@id/txtItem"
+        android:background="@color/colorAccent"
+        android:choiceMode="multipleChoice"></ListView>
+
+    <Button
+        android:id="@+id/btnDel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_red_light"
+        android:text="Listeden Silmek İçin Basılı Tutunuz" />
+</RelativeLayout>
