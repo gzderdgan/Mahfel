@@ -15,7 +15,7 @@ import android.widget.ListView;
 public class DavetliListem extends AppCompatActivity{
 
 
-    private Button misafir,btn;
+    private Button misafir;
     private DBManager dbManager;
     private ListView listView;
     private SimpleCursorAdapter adapter;
@@ -40,7 +40,6 @@ public class DavetliListem extends AppCompatActivity{
         adapter = new SimpleCursorAdapter(this, R.layout.view_record, cursor, from, to, 0);
         adapter.notifyDataSetChanged();
         listView.setAdapter(adapter);
-        btn = (Button)findViewById(R.id.btnDel);
         misafir = (Button)findViewById(R.id.misafirEkle);
 
         misafir.setOnClickListener(new View.OnClickListener() {

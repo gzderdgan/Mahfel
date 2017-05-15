@@ -1,77 +1,107 @@
 package com.example.gzde.locationapp;
 
-import android.app.ListActivity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
-import android.util.SparseBooleanArray;
+import android.support.v4.widget.SimpleCursorAdapter;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import java.util.ArrayList;
+public class Ceyiz extends AppCompatActivity {
 
-public class Ceyiz extends ListActivity {
+    private DBManagerCeyiz dbManager;
+    Button add;
+    EditText isim;
+    String name;
+    private ListView listView;
+    private SimpleCursorAdapter adapter;
 
-    private DBManager dbManager;
-    private ListView lw;
-    String namee;
-    ArrayList listem = new ArrayList();
-    private ArrayAdapter adapter;
-    EditText txt;
-    Button btn,btnDel;
+    final String[] from = new String[] { DatabaseHelper._ID,
+            DatabaseHelper.NAME };
+    final int[] to = new int[] { R.id.id, R.id.nametxt};
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ceyiz);
 
-        txt=(EditText)findViewById(R.id.txtItem);
-        btn = (Button) findViewById(R.id.btnAdd);
-        btnDel = (Button) findViewById(R.id.btnDel);
-        lw = (ListView) findViewById(R.id.listim);
+        isim = (EditText) findViewById(R.id.txtItem);
+        add = (Button) findViewById(R.id.btnAdd);
 
-        dbManager = new DBManager(this);
+        dbManager = new DBManagerCeyiz(this);
         dbManager.open();
 
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, listem);
-      //  adapter.notifyDataSetChanged();
-
-        btn.setOnClickListener(new View.OnClickListener() {
+        add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                namee = txt.getText().toString();
+                name = isim.getText().toString();
 
-                listem.add(namee);
-                txt.setText("");
-                adapter.notifyDataSetChanged();
-           //     dbManager.insert(DatabaseHelper.TABLE_NAME, null, );
-           //     lw.setAdapter(adapter);
+                dbManager.insert(name);
+
+                Intent main = new Intent(getApplication(), Ceyiz.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                startActivity(main);
+
 
             }
         });
+        dbManager = new DBManagerCeyiz(this);
+        dbManager.open();
+        Cursor cursor = dbManager.fetch();
 
-        btnDel.setOnClickListener(new View.OnClickListener() {
+
+        listView = (ListView) findViewById(R.id.listim);
+
+        adapter = new SimpleCursorAdapter(this, R.layout.view_record, cursor, from, to, 0);
+        adapter.notifyDataSetChanged();
+
+        listView.setAdapter(adapter);
+
+
+        //adapter.notifyDataSetChanged();
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
             @Override
-            public void onClick(View v) {
-                SparseBooleanArray checkedItemPositions = getListView().getCheckedItemPositions();
-                int itemCount = getListView().getCount();
+            public boolean onItemLongClick(AdapterView<?> parent, final View view, int position, final long id) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(Ceyiz.this);
+                alert.setMessage("Are you sure to delete");
+                alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-                for(int i=itemCount-1; i >= 0; i--){
-                    if(checkedItemPositions.get(i)){
-                        adapter.remove(listem.get(i));
+                        dbManager.delete(id);
+                        returnHomee();
 
                     }
-                }
-                checkedItemPositions.clear();
-                adapter.notifyDataSetChanged();
+                });
+                alert.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                        dialog.dismiss();
+                    }
+                });
+
+                alert.show();
+                return  true;
             }
         });
 
+    }
+    public void returnHomee() {
+        Intent home = new Intent(getApplicationContext(), Ceyiz.class)
+                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(home);
 
-setListAdapter(adapter);
 
     }
-}
+        }

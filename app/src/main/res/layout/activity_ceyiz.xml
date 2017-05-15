@@ -30,8 +30,8 @@
         />
 
     <ListView
-        android:id="@android:id/list"
-        android:layout_width="500dp"
+        android:id="@+id/listim"
+        android:layout_width="match_parent"
         android:layout_height="480dp"
         android:layout_below="@id/txtItem"
         android:background="@color/colorAccent"

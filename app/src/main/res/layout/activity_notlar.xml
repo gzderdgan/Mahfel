@@ -30,9 +30,9 @@
         />
 
     <ListView
-        android:id="@android:id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/listt"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
         android:layout_below="@id/txtItem"
         android:background="@color/colorAccent"
         android:choiceMode="multipleChoice"></ListView>
@@ -43,5 +43,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@android:color/holo_red_light"
-        android:text="Listeden Sil" />
+        android:text="Listeden Silmek İçin Uzun Basınız" />
 </RelativeLayout>
